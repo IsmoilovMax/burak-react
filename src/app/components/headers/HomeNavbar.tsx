@@ -5,25 +5,19 @@ import { NavLink } from "react-router-dom";
 export function HomeNavbar() {
     const autMember = null;
     return <div className="home-navbar">
-        <Container sx={{mt: "55px", height: "642px" }}>
+        <Container className="navber-container">
              <Stack 
-             sx={{height: "50px"}} 
-             flexDirection={"row"} 
-             justifyContent={"space-between"}
-             alignItems={"center"}>
+                className="menu"
+             >
                 
             <Box>
                 <NavLink to="/" >
-                    <img  style={{width:"125px", height: "30px"}} 
+                    <img  className="brend-logo"
                     src = "/icons/burak.svg" 
                     />
                 </NavLink>
             </Box>
-             <Stack
-             flexDirection={"row"}
-             justifyContent={"space-between"}
-             minWidth={"700px"}
-             alignItems={"center"}
+             <Stack className="links"             
              >
             <Box className={"hover-line"}>
                 <NavLink to="/" activeClassName={"underline"}>
@@ -51,16 +45,23 @@ export function HomeNavbar() {
             {!autMember ? (
                 <Box>
                     <Button 
-                    variant="contained" 
-                    style={{background: "#3776CC", color: "#f8f8ff" }}>
+                    variant="contained"  className="login-button">
                         Login
                     </Button>
                 </Box>
             ) : (
                 
-                <img /> 
+                // eslint-disable-next-line jsx-a11y/role-supports-aria-props
+                <img 
+                    className="user-avatar"
+                    src={"/icons/default-user.svg"}
+                    aria-haspopup={"true"}
+                /> 
                 )}
              </Stack>
+            </Stack>
+            <Stack>
+                Detail
             </Stack>
         </Container> 
     </div>;
