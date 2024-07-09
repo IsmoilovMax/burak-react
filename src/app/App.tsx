@@ -9,6 +9,9 @@ import { UsersPage } from "./screens/userPage";
 import { HomeNavbar } from "./components/headers/HomeNavbar";
 import { OtherNavbar } from "./components/headers/OtherNavbar";
 import { Footer } from "./components/footer";
+import "../css/app.css";
+import "../css/navbar.css";
+import { HelpPage } from "./screens/helpPage";
 
 function App() {
   const location = useLocation();
@@ -27,6 +30,9 @@ function App() {
           </Route>
           <Route path="/member-page">
             <UsersPage />
+          </Route>
+          <Route path="/help">
+            <HelpPage />
           </Route>
           <Route path="/">
             <HomePage />
