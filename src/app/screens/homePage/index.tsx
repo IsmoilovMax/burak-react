@@ -1,6 +1,7 @@
 import { Container } from "@mui/material";
+import { findConfigFile } from "typescript";
 
-export function HomePage() {
+export default function HomePage() {
     return <Container>HomePage</Container>;
   }
   
