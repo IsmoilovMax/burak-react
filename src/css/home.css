@@ -251,3 +251,59 @@
     transform: scale(1.5);
     overflow: hidden;
 }
+
+/** ACTIVE-USERS BURAK**/
+
+.homepage .active-users-frame {
+    background: #f8f8ff;
+    display: flex;
+    width: 100%;
+    height: 550px;
+}
+
+.homepage .active-users-frame .main {
+    flex-direction: column ;
+    align-items: center;
+    padding-top: 55px;
+    display: flex;
+}
+
+.homepage .active-users-frame .category-title {
+    font-style: normal;
+    font-weight: 750;
+    font-size: 35px;
+    line-height: 40px;
+}
+
+.homepage .cards-frame {
+    width: 100%;
+    margin-top: 20px;
+    flex-direction: row;    
+}
+
+.homepage .cards-frame .card {
+    margin: 10px;
+    min-height: 300px;
+    min-width: 310px;
+    cursor: pointer;
+    
+}
+
+.homepage .cards-frame .member-nickname {
+    font-size: large;
+    text-align: center;
+}
+
+.homepage .cards-frame .no-data {
+    width: 100%;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    font-style: normal;
+    font-weight: 410;
+    font-size: 35px;
+    line-height: 30px;
+    color: #e3c08d;
+  }
