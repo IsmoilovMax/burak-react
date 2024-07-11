@@ -41,7 +41,7 @@ export default function ActiveUsers() {
                 <Box className="no-data">No Active Users!</Box>
               )}
             </CssVarsProvider>
-          </Stack>
+          </Stack> 
         </Stack>
       </Container>
     </div>
