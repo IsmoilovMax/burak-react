@@ -129,7 +129,7 @@ export default function Products() {
                         </span>
                         <div className={"product-desc"}>
                           <MonetizationOnIcon />
-                          {12}
+                          {100}
                         </div>
                       </Box>
                     </Stack>
