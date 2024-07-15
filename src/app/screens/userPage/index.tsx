@@ -30,16 +30,16 @@ export default function UserPage() {
               >
                 <div className={"order-user-img"}>
                   <img
-                    src={"/icons/default-user.svg"}
+                    src={"/img/you.webp"}
                     className={"order-user-avatar"}
                   />
                   <div className={"order-user-icon-box"}>
                     <img src={"/icons/user-badge.svg"} />
                   </div>
                 </div>
-                <span className={"order-user-name"}>Martin</span>
+                <span className={"order-user-name"}>MAX</span>
                 <span className={"order-user-prof"}>User</span>
-                <span className={"order-user-prof"}>No address</span>
+                <span className={"order-user-prof"}>GWANGJU</span>
               </Box>
               <Box className={"user-media-box"}>
                 <FacebookIcon />

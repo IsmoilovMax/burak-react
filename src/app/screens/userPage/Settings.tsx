@@ -24,8 +24,8 @@ export function Settings() {
           <input
             className={"spec-input mb-nick"}
             type="text"
-            placeholder={"Martin"}
-            value={"Martin"}
+            placeholder={"MAX"}
+            value={"MAX"}
             name="memberNick"
           />
         </div>
@@ -37,7 +37,7 @@ export function Settings() {
             className={"spec-input mb-phone"}
             type="text"
             placeholder={"no phone"}
-            value={"821024694424"}
+            value={"010-5705-1442"}
             name="memberPhone"
           />
         </div>
@@ -47,7 +47,7 @@ export function Settings() {
             className={"spec-input  mb-address"}
             type="text"
             placeholder={"no address"}
-            value={"no address"}
+            value={"GWANGJU"}
             name="memberAddress"
           />
         </div>
