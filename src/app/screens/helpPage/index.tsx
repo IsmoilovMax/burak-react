@@ -13,10 +13,16 @@ import "../../../css/help.css";
 import { faq } from "../../../lib/data/faq";
 import { terms } from "../../../lib/data/terms";
 
+//e.currentTarget: Hodisa yuz berayotgan elementni bildiradi. e.currentTarget aniq hodisaga tegishli bo'lgan elementni ko'rsatadi.
+//e.target: Hodisani qo'zg'atgan elementni bildiradi.
+//e.preventDefault(): Brauzerning asosiy hodisa bajarilishini to'xtatadi.
+//e.stopPropagation(): Hodisa tarqalishini to'xtatadi.
+//e.persist(): Hodisani pool'dan chiqib ketishiga yo'l qo'ymaydi va hodisa ma'lumotlarini saqlab qoladi.
+//React.SyntheticEvent Reactda  turli brauzerlarda hodisalarni boshqarish uchun bir xil API bilan ishlaydi.
 export default function HelpPage() {
   const [value, setValue] = React.useState("1");
 
-  /** HANDLERS **/
+/** HANDLERS **/
   const handleChange = (e: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);
   };

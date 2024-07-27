@@ -16,7 +16,7 @@ export default function UserPage() {
             <Box display={"flex"} flexDirection={"column"}>
               <Box className={"menu-name"}>Modify Member Details</Box>
               <Box className={"menu-content"}>
-                <Settings />
+              <Settings />
               </Box>
             </Box>
           </Stack>
