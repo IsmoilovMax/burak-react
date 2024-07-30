@@ -22,7 +22,7 @@ const actionDispatch = (dispatch: Dispatch) => ({
  
 const popularDishesRetriever = createSelector(
   retrievePopularDishes,
-  (popularDishes) => ({popularDishes});
+  (popularDishes) => ({popularDishes})
 )
 
 export default function HomePage() {
