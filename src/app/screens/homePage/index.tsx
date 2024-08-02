@@ -28,13 +28,16 @@ const popularDishesRetriever = createSelector(
 export default function HomePage() {
   const { setPopularDishes } = actionDispatch(useDispatch());
   const { popularDishes } = useSelector(popularDishesRetriever)
-  //selector: store => Data
+  //2:selector: store => Data
+
+  console.log("REACT_APP_API_URL",process.env.REACT_APP_API_URL)
 
   useEffect(() => {
-    //backend server data request => Data
+    
+    //1:backend server data request => Data(json)
       
   
-    //slice: Data => Store(redux store)
+    //slice: Data => Store(redux store joyledi)
    
   }, []);
 

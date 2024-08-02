@@ -1,16 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { HomePageState } from "../../../lib/types/screen";
-import { act } from "react";
+
 
 const initialState: HomePageState = {
     popularDishes: [],
     newDishes: [],
     topUsers: [],
 };
-
+// bitt argument : options
 const homePageSlice = createSlice({
     name: "homePage",
     initialState,
+    //malumotlardi ozgartirish : action.payload amalga oshadi.
+    //state = initialState, action = slice: data payload ichida datamiz boladi.
     reducers: {
         setPopularDishes: (state, action) => {
             state.popularDishes = action.payload;
