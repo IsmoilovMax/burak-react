@@ -3,8 +3,15 @@ import { Box, Button, Container, Stack } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import Basket from "./Basket";
 import { useEffect, useState } from "react";
+import { CartItem } from "../../../lib/types/search";
 
-export default function HomeNavbar() {
+interface HomeNavbarProps {
+  cartItems: CartItem[];
+}
+
+
+export default function HomeNavbar(props: HomeNavbarProps) {
+  const { cartItems } = props;
   const autMember = null;
   const [count, setCount] = useState<number>(0);
   const [value, setValue] = useState<boolean>(true); 
@@ -62,7 +69,7 @@ export default function HomeNavbar() {
               </NavLink>
             </Box>
             {/**BASKET */}
-            <Basket />
+            <Basket cartItems={cartItems}/>
 
             {!autMember ? (
               <Box>
