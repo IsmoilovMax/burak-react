@@ -21,7 +21,7 @@ export interface Member {
     memberNick: string;
     memberPhone: string;
     memberPassword: string;
-    memberAddress: string;
+    memberAddress?: string;
     memberDesc?: string;
     memberImage?: string;
     memberPoints?: number;

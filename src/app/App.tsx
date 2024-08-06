@@ -33,11 +33,15 @@ function App() {
       {location.pathname === "/" 
       ? <HomeNavbar cartItems={cartItems}
           onRemove={onRemove}  onAdd={onAdd}
-          onDelete={onDelete} onDeleteAll={onDeleteAll} 
+          onDelete={onDelete} onDeleteAll={onDeleteAll}
+          setSignupOpen={setSignupOpen} 
+          setLoginOpen={setLoginOpen}
       /> 
       : <OtherNavbar cartItems={cartItems}
         onRemove={onRemove}  onAdd={onAdd}
-        onDelete={onDelete} onDeleteAll={onDeleteAll} 
+        onDelete={onDelete} onDeleteAll={onDeleteAll}
+        setSignupOpen={setSignupOpen} 
+        setLoginOpen={setLoginOpen}
       />}   
         <Switch>
           <Route path="/products">

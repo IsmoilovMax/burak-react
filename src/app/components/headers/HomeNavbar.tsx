@@ -11,29 +11,19 @@ interface HomeNavbarProps {
   onRemove: (item: CartItem) => void;
   onDelete: (item: CartItem) => void;
   onDeleteAll: () => void;
+  setSignupOpen: (isOpen: boolean) => void;
+  setLoginOpen: (isOpen: boolean) => void;
+  
 }
 
 
 export default function HomeNavbar(props: HomeNavbarProps) {
-  const { cartItems, onAdd, onDelete, onDeleteAll, onRemove } = props;
+  const { cartItems, onAdd, onDelete, onDeleteAll, onRemove, setSignupOpen, setLoginOpen } = props;
   const autMember = null;
-  const [count, setCount] = useState<number>(0);
-  const [value, setValue] = useState<boolean>(true); 
-
-  useEffect(() => {
-    console.log("componentDidMount");
-    setCount(count + 1);
-
-    return () => {
-      console.log("componentWillUnmount");
-    };
-  }, [value]);
-
+  
   /** HANDLERS */
 
-  const buttonHandler = () => {
-    setValue(!value);
-  }
+  
 
   return (
     <div className="home-navbar">
@@ -80,7 +70,9 @@ export default function HomeNavbar(props: HomeNavbarProps) {
 
             {!autMember ? (
               <Box>
-                <Button variant="contained" className="login-button">
+                <Button variant="contained" className="login-button"
+                onClick={() => setLoginOpen(true)}
+                >
                   Login
                 </Button>
               </Box>
@@ -103,7 +95,8 @@ export default function HomeNavbar(props: HomeNavbarProps) {
             <Box className={"service-txt"}>24 hours service</Box>
             <Box className={"signup"}>
               {!autMember ? (
-                <Button variant={"contained"} className={"signup-button"}>
+                <Button variant={"contained"} className={"signup-button"}
+                onClick={() => setSignupOpen(true)}>
                   SIGN UP
                 </Button>
               ) : null}
