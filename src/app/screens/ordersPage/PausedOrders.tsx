@@ -12,13 +12,13 @@ import { Order, OrderItem } from "../../../lib/types/order";
 
 /** Redux slice & Selector */
  
-const pausedOrderRetriever = createSelector(
+const pausedOrdersRetriever = createSelector(
   retrievePausedOrders,
   (pausedOrders) => ({ pausedOrders })
 );
 
 export default function PausedOrders() {
-    const {pausedOrders} = useSelector(pausedOrderRetriever);
+    const {pausedOrders} = useSelector(pausedOrdersRetriever);
     
   return (
     <TabPanel value={"1"}>
