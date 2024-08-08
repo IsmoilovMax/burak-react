@@ -9,9 +9,14 @@ import moment from "moment";
 import { createSelector } from "reselect";
 import { retrieveProcessOrders } from "./selector";
 import { useSelector } from "react-redux";
-import { serverApi } from "../../../lib/config";
+import { Messages, serverApi } from "../../../lib/config";
 import { Product } from "../../../lib/types/product";
-import { Order, OrderItem } from "../../../lib/types/order";
+import { Order, OrderItem, OrderUpdateInput } from "../../../lib/types/order";
+import { useGlobals } from "../../hooks/useGlobals";
+import { T } from "../../../lib/types/common";
+import { OrderStatus } from "../../../lib/enums/order.enum";
+import OrderService from "../../services/OrderService";
+import { sweetErrorHandling } from "../../../lib/sweetAlert";
 
 /** Redux slice & Selector */
  
@@ -19,11 +24,40 @@ const processOrdersRetriever = createSelector(
   retrieveProcessOrders,
   (processOrders) => ({ processOrders })
 );
+interface ProcessOrdersProps {
+  setValue: (input: string) => void
+}
 
-export default function ProcessOrders() {
+export default function ProcessOrders(props: ProcessOrdersProps) {
+  const {setValue} = props;
+  const {authMember, setOrderBuilder} = useGlobals()
   const {processOrders} = useSelector(processOrdersRetriever);
   
-  
+  /**Handlers  */
+  const finishOrderHandler = async(e: T) => {
+    try{
+      if(!authMember) 
+        throw new Error(Messages.error2)
+      //Payment Process
+      const orderId = e.target.value;
+      const input: OrderUpdateInput = {
+        orderId: orderId, 
+        orderStatus: OrderStatus.FINISH,
+      }
+
+      const confirmation = window.confirm("Have ypu receivved?")
+      if(confirmation) {
+        const order = new OrderService();
+        await order.updateOrders(input);
+        setValue("3");
+        setOrderBuilder(new Date());
+      }
+    } catch(err) {
+      console.log(err)
+      sweetErrorHandling(err).then();
+    }
+  }
+
   return (
     <TabPanel value={"2"}>
       <Stack>
@@ -73,7 +107,8 @@ export default function ProcessOrders() {
                 <p className={"data-compl"}>
                   {moment().format("YY-MM-DD HH:mm")}
                 </p>
-                <Button variant="contained" className={"verify-button"}>
+                <Button value={order._id} variant="contained" className={"verify-button"}
+                onClick={finishOrderHandler}>
                   Verify to Fulfil
                 </Button>
               </Box>
